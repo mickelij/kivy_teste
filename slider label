@@ -1,0 +1,25 @@
+from kivy.app import App 
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.slider import slider
+from kivy.uix.label import label 
+
+class MinhaApp(App):
+    def build(self):
+        layout = BoxLayout(orientation='vertical', padding=20)
+
+        slider = slider(min=o, max=100, value=50, step=1)
+        slider.bind(value=self.atualizar_label)
+
+        self.label = label(text="valor do slider: {}".format(int(slider.value)))
+
+        layout.add_widget(slider)
+        layout.add_widget(self.label)
+
+        return layout
+    
+    def atualiza_label(self, instance, valor):
+
+        self.label.text = "valor do slider: {}".format(int(valor))
+
+if __name__ == "__main__":
+ MinhaApp().run()
