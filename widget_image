@@ -1,9 +1,9 @@
 from kivy.app import App 
-from kivy.uix.image import image 
+from kivy.uix.image import Image
 
 class MinhaApp(App):
     def build(self):
-        return image(source='https://i.pinimg.com/564x/aa/18/b9/aa18b9b2815973f720eb2d149c397ea3.jpg')
+        return Image(source='/Users/aluno.sesipaulista/Desktop/site.html/spiderman.jpg')
     
 if __name__ == "__main__":
     MinhaApp().run()
